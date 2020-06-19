@@ -15,16 +15,21 @@
     const stringToRepeat = prompt('enter some text to repeat ...');
 
     const repetitionsStr = prompt('... and how many times to repeat it');
-    const repetitions = _(repetitionsStr);
+    const repetitions = Number(repetitionsStr);
 
     // program logic
-    let repeated = '';
-    for (let i = _; i < _; i++) {
-      repeated += _;
+    let repeated = ' ';
+    if(repetitions > 0) {
+    for (let i = 0; i < repetitions; i++) {
+      repeated += ' ' + stringToRepeat;
+    }
+    alert(repeated)
+    } else {
+      alert('fill numbers which is bigger than 0');
     }
 
     // respond to user
-    alert(repeated);
+    
 
     // log for dev
     console.log('-- interaction log --');

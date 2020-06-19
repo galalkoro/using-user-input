@@ -19,15 +19,31 @@
       debugger;
 
       const input1 = prompt('first number');
-      const num1 = Boolean(input1);
+      const num1 = Number(input1);
 
       const input2 = prompt('second number');
-      const num2 = Boolean(input2);
+      const num2 = Number(input2);
 
       let listOfNumbers = '';
-      for (let i = num1; i < num2; i++) {
-        listOfNumbers + `${i}, `;
-      }
+
+				if (!Number.isNaN(num1) && !Number.isNaN(num2)) {
+					if (num1 < num2) {
+						for (let i = num1 + 1; i < num2; i++) {
+							listOfNumbers += `${i}, `;
+						}
+					} else if (num1 > num2) {
+						for (let i = num1 - 1; i > num2; i--) {
+							listOfNumbers += `${i},`;
+						}
+					} else {
+						listOfNumbers = 'smart';
+					}
+				} else {
+					listOfNumbers = 'Check your input may are not numbers';
+				}
+				if (listOfNumbers === '') {
+					listOfNumbers = 'Do you think we will become a coaches by HYF?';
+				}
 
       alert(listOfNumber);
 
@@ -43,7 +59,7 @@
 
 <body>
   <section id='user-interface' class='centered'>
-    <button onclick='numbersBetweenHandlers()'>Print numbers between ...</button>
+    <button onclick="numbersBetweenHandlers()">Print numbers between ...</button>
   </section>
 </body>
 

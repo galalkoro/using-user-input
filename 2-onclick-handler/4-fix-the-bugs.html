@@ -25,11 +25,22 @@
       const num2 = String(input2);
 
       let sumOfAll = 0;
-      let i = number1;
-      while (i < number2) {
-        sumOfAll += i;
-        i;
-      }
+				let i = num1;
+				if (!Number.isNaN(num1) && !Number.isNaN(num2)) {
+					if (num1 <= num2) {
+						while (i <= num2) {
+							sumOfAll += i;
+							i++;
+						}
+					} else {
+						while (i >= num2) {
+							sumOfAll += i;
+							i--;
+						}
+					}
+				} else {
+					sumOfAll = 'checked';
+				}
 
       alert(sumOfAll);
 
